@@ -17,10 +17,9 @@ if (Meteor.isClient) {
 
   Template.time_dropdown.helpers({
     populate: function() {
-      var select = $('#res_time');
-      console.log(select);
-      var hours, minutes, ampm;
-      for(var i = 0; i <= 100; i += 15){
+      var hours, minutes, ampm, time;
+      var arr = [];
+      for(var i = 420; i <= 1440; i += 15){
         hours = Math.floor(i / 60);
         minutes = i % 60;
         if (minutes < 10){
@@ -31,41 +30,17 @@ if (Meteor.isClient) {
         if (hours === 0){
             hours = 12;
         }
-        select.append($('<option></option>')
-            .attr('value', i)
-            .text(hours + ':' + minutes + ' ' + ampm)); 
+        time = hours + ':' + minutes + ' ' + ampm;
+        arr.push(time);
       }
+      console.log(arr);
+      return arr;
     }
   });
-  
+
   var time =  moment().add(2, 'h').format("H mm");
 
   console.log(time);
-
-  // var populate = function(selector) {
-  //   var select = $(selector);
-  //   console.log(select);
-  //   var hours, minutes, ampm;
-  //   for(var i = 0; i <= 100; i += 15){
-  //     hours = Math.floor(i / 60);
-  //     minutes = i % 60;
-  //     if (minutes < 10){
-  //         minutes = '0' + minutes; // adding leading zero
-  //     }
-  //     ampm = hours % 24 < 12 ? 'AM' : 'PM';
-  //     hours = hours % 12;
-  //     if (hours === 0){
-  //         hours = 12;
-  //     }
-  //     select.append($('<option></option>')
-  //         .attr('value', i)
-  //         .text(hours + ':' + minutes + ' ' + ampm)); 
-  //   }
-  // };
-
-  // populate('#res_time');
-
-  // console.log(populate('#res_time'));
 }
 
 if (Meteor.isServer) {

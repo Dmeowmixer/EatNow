@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Table Ready</h1>
   <form>
     <input type="text" value="Name">
     <input type="text" value="Phone #">
@@ -11,11 +11,12 @@
     {{> time_dropdown}}
     
   </form>
-  <!-- {{> hello}} -->
 </body>
 
 <template name="time_dropdown">
   <select name="Requested Reservation Time" id="res_time">
-    {{populate}} 
+    {{#each populate}}
+      <option>{{this}}</option>
+    {{/each}}
   </select>
 </template>
