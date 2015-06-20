@@ -21,3 +21,8 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+
+$('#res_time').
+var time = moment().add(2,'hours').format('H mm');
+console.log(time);
