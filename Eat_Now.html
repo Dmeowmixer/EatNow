@@ -8,14 +8,14 @@
     <input type="text" value="Name">
     <input type="text" value="Phone #">
     <input type="text" value="# of Party Members">
-    <select name="Requested Reservation Timee" id="res_time">
-    </select>
+    {{> time_dropdown}}
     
   </form>
-  {{> hello}}
+  <!-- {{> hello}} -->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="time_dropdown">
+  <select name="Requested Reservation Time" id="res_time">
+    {{populate}} 
+  </select>
 </template>
