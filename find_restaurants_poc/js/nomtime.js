@@ -1,5 +1,7 @@
 var map;
 var infowindow;
+var PLACE_MAX_WIDTH = 75;
+var PLACE_MAX_HEIGHT = 50;
 
 function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -51,9 +53,33 @@ function handleNoGeolocation(errorFlag) {
 
 function searchRes(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
+    var nearbyPlaces = results.map(function(place){
+      createMarker(place);
+      var photos = [];
+      if(place.photos){
+        photos = place.photos.map(function(photo){
+          return {
+            url : photo.getUrl({ maxWidth : PLACE_MAX_WIDTH, maxHeight : PLACE_MAX_HEIGHT }),
+            width : photo.width,
+            height : photo.height
+          }
+        });
+      }
+      return {
+        name : place.name,
+        rating : place.rating,
+        types : place.types,
+        vicinity : place.vicinity,
+        photos : photos,
+        icon : place.icon
+      }
+    });
+
+    console.log('Merry Christmas team EatNow!');
+    console.log('HTH! Enjoy! and create great things!');
+    console.log('nearbyPlaces',nearbyPlaces);
+    console.log('nearbyPlaces as json', JSON.stringify(nearbyPlaces));
+
   }
 }
 
