@@ -66,15 +66,44 @@ if (Meteor.isClient) {
   // populate('#res_time');
 
   // console.log(populate('#res_time'));
-}
+  // 
+  // 
+  // 
+  // 
+  
 
+
+// Ransons Code
+// Appending user input to the ul list.
+
+
+
+// Template.hello.events({
+//   'click button': function () {
+//     // increment the counter when button is clicked
+//     Session.set('counter', Session.get('counter') + 1);
+//   }
+// });
+
+
+Template.submit_button.events({
+  "click #submit_button": function(){
+    var user_name = $('#name_input').val();
+    var user_phone_num = $('#phone_num_input').val();
+    var user_party_num = $('#party_num_input').val();
+    // var user_selected_time = $('#res_time').(":selected");
+    console.log(user_selected_time);
+  }
+  // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
+});
+
+
+
+  
+
+}
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
   });
 }
-
-
-$('#res_time').
-var time = moment().add(2,'hours').format('H mm');
-console.log(time);
