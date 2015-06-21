@@ -1,15 +1,19 @@
 <head>
   <title>Table Ready</title>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <h1>Table Ready</h1>
-  <form id="user_input">
-    <input id="name_input" type="text" value="Name">
-    <input id="phone_num_input" type="text" value="Phone #">
-    <input id = "party_num_input" type="text" value="# of Party Members">
-    {{> time_dropdown}}
-  </form>
+  <div class="food_image">
+    <h1 class="restaurant_name">Restaurant Name</h1>
+    <form id="user_input">
+      <input id="name_input" type="text" placeholder="Name">
+      <input id="phone_num_input" type="text" placeholder="Phone #">
+      <input id = "party_num_input" type="text" placeholder="# of Party Members">
+      {{> time_dropdown}}
+      {{> submit_button}}
+    </form>
+  </div>
   
   <ul id="result_list">
     {{#each reservation}}
@@ -17,7 +21,6 @@
     {{/each}}
   </ul>
 
-  {{> submit_button}}
 
 </body>
 

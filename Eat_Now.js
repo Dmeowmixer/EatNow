@@ -15,32 +15,32 @@ if (Meteor.isClient) {
   //   }
   // });
 
+var addMinutes = function(date, minutes) {
+  return new Date(date.getTime() + minutes*60000);
+};
+
   Template.time_dropdown.helpers({
     populate: function() {
-      var hours, minutes, ampm, time;
+      var d = new Date();
+      var result = "";
       var arr = [];
-      for(var i = 420; i <= 1440; i += 15){
-        hours = Math.floor(i / 60);
-        minutes = i % 60;
-        if (minutes < 10){
-            minutes = '0' + minutes; // adding leading zero
-        }
-        ampm = hours % 24 < 12 ? 'AM' : 'PM';
-        hours = hours % 12;
-        if (hours === 0){
-            hours = 12;
-        }
-        time = hours + ':' + minutes + ' ' + ampm;
-        arr.push(time);
+      for (var idx = 0; idx < 8; idx++)
+      {
+          var m = (((d.getMinutes() + 7.5)/15 | 0) * 15) % 60;
+          var h = ((((d.getMinutes()/105) + .5) | 0) + d.getHours()) % 12;
+          d = new Date(d.getYear(), d.getMonth(), d.getDay(), h, m, 0, 0);
+
+          if (idx > 0) result += ", ";
+          result += ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2);
+          
+          d = addMinutes(d, 15);
       }
-      console.log(arr);
+      // console.log(result);
+      arr = result.split(',');
+      // console.log(arr);
       return arr;
     }
   });
-
-  var time =  moment().add(2, 'h').format("H mm");
-
-  console.log(time);
 
 // Ransons Code
 // Appending user input to the ul list.
