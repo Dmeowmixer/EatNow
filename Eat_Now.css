@@ -133,17 +133,21 @@ form {
   margin-top: 10px;
 }
 
-.party_num {
+.name, .party_num, .select_time, .time_left {
+
+}
+
+/*.party_num {*/
   /*margin-left: 300px;*/
-  margin-left: 25%;
-}
+  /*margin-left: 25%;*/
+/*}*/
 
-.select_time {
+/*.select_time {*/
   /*margin-left: 350px;*/
-  margin-left: 25%;
-}
+  /*margin-left: 25%;*/
+/*}*/
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+/*@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
   .party_num {
     margin-left: 20%; 
   }
@@ -151,5 +155,5 @@ form {
   .select_time {
     margin-left: 25%;
   }
-} 
+} */
 
