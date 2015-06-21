@@ -71,7 +71,7 @@ if (Meteor.isClient) {
       var user_party_num = $('#party_num_input').val();
       var user_selected_time = $('#res_time').parent(":selected").val();
       console.log(user_selected_time);
-    $('#result_list').append("<li>"+user_name, user_party_num+ "</li>");
+    $('#result_list').append("<ul>"+user_name, user_party_num+ "</ul>");
     }
   });
 
