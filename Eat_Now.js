@@ -67,8 +67,6 @@ Template.submit_button.events({
 
 
 
-  
-
 }
 if (Meteor.isServer) {
   Meteor.startup(function () {
