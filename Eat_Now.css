@@ -116,44 +116,25 @@ form {
 }
 
 #result_info, #result_list{
-  text-align: justify;
+  /*text-align: justify;*/
   padding-left: 200px;
   padding-right: 200px;
   border: 1px solid black;
 }
 
-#result_info:after, #result_list:after {
+#result_info:after, #result_list:after, #db_results:after{
   content: '';
   display: inline-block;
   width: 100%;
 }
 
-#result_info li, #result_list li{
+#result_info li, #result_list li, #db_results li, #delete{
   display: inline-block;
   margin-top: 10px;
+  width: 19%;
+  text-align: center;
 }
 
-.name, .party_num, .select_time, .time_left {
 
-}
 
-/*.party_num {*/
-  /*margin-left: 300px;*/
-  /*margin-left: 25%;*/
-/*}*/
-
-/*.select_time {*/
-  /*margin-left: 350px;*/
-  /*margin-left: 25%;*/
-/*}*/
-
-/*@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
-  .party_num {
-    margin-left: 20%; 
-  }
-
-  .select_time {
-    margin-left: 25%;
-  }
-} */
-
+/*text-align:justify;padding-left:200px;padding-right:200px;border:1px solid black;*/
