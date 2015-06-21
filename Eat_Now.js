@@ -54,6 +54,9 @@ if (Meteor.isClient) {
 //   }
 // });
 
+
+
+// defines the submit button event 
 Template.submit_button.events({
   "click #submit_button": function(){
     var user_name = $('#name_input').val();
@@ -65,6 +68,14 @@ Template.submit_button.events({
   // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
 });
 
+
+Accounts.onCreateUser(function(options,user){
+  user.permissions = user;
+  if (options.profile) {
+    user.profile = options.profile;
+  }
+  return user;
+});
 
 
 }
