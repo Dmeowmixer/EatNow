@@ -137,9 +137,9 @@ form {
   margin-top: 10px;
 }
 
-.customer {
+/*.customer {
   text-align: justify;
-  padding-left: 200px;
+  padding-left: 195px;
   padding-right: 200px;
   border: 1px solid black;
 }
@@ -149,7 +149,7 @@ form {
   display: inline-block;
   width: 100%;
 }
-
+*/
 .customer li {
   display: inline-block;
   margin-top: 10px;
