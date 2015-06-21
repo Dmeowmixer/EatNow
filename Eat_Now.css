@@ -85,6 +85,7 @@ input, #res_time {
   font-family: 'Oswald', sans-serif;
   width: 150px;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 h1.restaurant_name {
@@ -114,43 +115,20 @@ form {
   text-align: center;
 }
 
-.customer_list {
-  min-width: 900px;
-}
-
-.customer_nav{
+#result_info, #result_list{
   text-align: justify;
-  /*margin-left: 200px;*/
   padding-left: 200px;
   padding-right: 200px;
   border: 1px solid black;
 }
 
-.customer_nav:after {
+#result_info:after, #result_list:after {
   content: '';
   display: inline-block;
   width: 100%;
 }
 
-.customer_nav li{
-  display: inline-block;
-  margin-top: 10px;
-}
-
-/*.customer {
-  text-align: justify;
-  padding-left: 195px;
-  padding-right: 200px;
-  border: 1px solid black;
-}
-
-.customer:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-}
-*/
-.customer li {
+#result_info li, #result_list li{
   display: inline-block;
   margin-top: 10px;
 }

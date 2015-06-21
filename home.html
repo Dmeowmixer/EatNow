@@ -7,7 +7,18 @@
       {{> submit_button}}
     </form>
     
+    <ul id="result_info">
+      <li>Name</li>
+      <li># of Party Members</li>
+      <li>Reservation Time</li>
+      <li>Estimate Wait Time</li>
+    </ul>
+
     <ul id="result_list">
+      <li>Name</li>
+      <li># of Party Members</li>
+      <li>Reservation Time</li>
+      <li>Estimate Wait Time</li>
       {{#each reservation}}
         {{> res}}
       {{/each}}
