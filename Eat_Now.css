@@ -55,13 +55,19 @@ input, #res_time {
   width: 150px;
 }
 
-h1 {
+h1.restaurant_name {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 2px;
-  font-size: 300%;
   color: #FFF;
   text-shadow: 2px 2px #000;
   line-height: 250px;
+  font-size: 300%;
+}
+
+h1.login {
+  font-size: 110%;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 50px;
 }
 
 .food_image {

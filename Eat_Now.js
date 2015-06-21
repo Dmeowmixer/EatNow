@@ -54,6 +54,9 @@ var addMinutes = function(date, minutes) {
 //   }
 // });
 
+
+
+// defines the submit button event 
 Template.submit_button.events({
   "click #submit_button": function(){
     var user_name = $('#name_input').val();
@@ -66,8 +69,14 @@ Template.submit_button.events({
 });
 
 
+Accounts.onCreateUser(function(options,user){
+  user.permissions = user;
+  if (options.profile) {
+    user.profile = options.profile;
+  }
+  return user;
+});
 
-  
 
 }
 if (Meteor.isServer) {
