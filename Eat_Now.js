@@ -63,12 +63,15 @@ if (Meteor.isClient) {
   // defines the submit button event 
   Template.submit_button.events({
     "click #submit_button": function(){
+      event.preventDefault();
+      console.log("click works");
       var user_name = $('#name_input').val();
+      console.log("user_name works and saves");
       var user_phone_num = $('#phone_num_input').val();
       var user_party_num = $('#party_num_input').val();
-      var user_selected_time = $('#res_time').parent(":selected");
+      var user_selected_time = $('#res_time').parent(":selected").val();
       console.log(user_selected_time);
-    $('#result_list').append("</li>"+user_name+ "</li>");
+    $('#result_list').append("<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>");
     }
   });
 

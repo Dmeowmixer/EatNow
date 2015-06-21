@@ -132,3 +132,7 @@ form {
   display: inline-block;
   margin-top: 10px;
 }
+
+.party_num {
+  margin-left: 300px; 
+}
