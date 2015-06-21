@@ -55,29 +55,33 @@ if (Meteor.isClient) {
 // });
 
 
+  Template.submit_button.events({
+    "click #submit_button": function(){
+      var user_name = $('#name_input').val();
+      var user_phone_num = $('#phone_num_input').val();
+      var user_party_num = $('#party_num_input').val();
+      // var user_selected_time = $('#res_time').(":selected");
+      console.log(user_selected_time);
+    }
+    // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
+  });
 
-// defines the submit button event 
-Template.submit_button.events({
-  "click #submit_button": function(){
-    var user_name = $('#name_input').val();
-    var user_phone_num = $('#phone_num_input').val();
-    var user_party_num = $('#party_num_input').val();
-    // var user_selected_time = $('#res_time').(":selected");
-    console.log(user_selected_time);
-  }
-  // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
-});
-
-Router.route('/', function () {
-  this.render('home');
-});
-
+  Router.configure({
+    layoutTemplate: 'layout'
+  });
 
 Router.route('/rest', function (){
   this.render('restaurant_view');
 });
+  Router.route('/', function () {
+    this.render('home');
+  });
 
+  Router.route('/rest', function (){
+    this.render('restaurant_view');
+  });
 }
+
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
