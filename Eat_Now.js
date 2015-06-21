@@ -121,6 +121,10 @@ if (Meteor.isClient) {
     this.render('home');
   });
 
+  Router.route('/nom', function (){
+    this.render('nom');
+  });
+
   Router.route('/rest', function (){
     this.render('restaurant_view');
   });
