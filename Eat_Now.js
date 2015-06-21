@@ -113,7 +113,11 @@ if (Meteor.isClient) {
     layoutTemplate: 'layout'
   });
 
-  Router.route('/', function () {
+  Router.route('/', function(){
+    this.render('rest_list');
+  });
+
+  Router.route('/select', function () {
     this.render('home');
   });
 
