@@ -2,39 +2,6 @@
   <title>Table Ready</title>
 </head>
 <body>
-  <h1>Welcome to Table Ready</h1>
-
-  {{> add_reservation_form}}
-  {{> loginButtons}}
+  <h1>Table Ready</h1>
   {{> yield}}
-
-</body>
-
-<!-- Template for user input form -->
-<!-- <template name="add_reservation_form">
-  {{#if currentUser}}
-    <form id="user_input">
-      <input id="name_input" type="text" value="Name">
-      <input id="phone_num_input" type="text" value="Phone #">
-      <input id = "party_num_input" type="text" value="# of Party Members">
-      {{> time_dropdown}}
-    </form>
-    {{> submit_button}}
-    {{else}}
-      <h1>Please Login to Make a Reservation!</h1>
-  {{/if}}
-</template>
- -->
-<!-- template for submite button -->
-<!-- <template name="submit_button">
-  <input id="submit_button" type="submit" value="Submit Reservation">
-</template>
- -->
-<!-- template for user time select -->
-<!-- <template name="time_dropdown">
-  <select name="Requested Reservation Time" id="res_time">
-    {{#each populate}}
-      <option>{{this}}</option>
-    {{/each}}
-  </select>
-</template> -->
+</body> 
