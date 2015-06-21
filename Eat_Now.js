@@ -73,13 +73,11 @@ if (Meteor.isClient) {
 Router.route('/rest', function (){
   this.render('restaurant_view');
 });
-  Router.route('/', function () {
-    this.render('home');
-  });
 
-  Router.route('/rest', function (){
-    this.render('restaurant_view');
-  });
+Router.route('/', function () {
+  this.render('home');
+});
+
 }
 
 if (Meteor.isServer) {
