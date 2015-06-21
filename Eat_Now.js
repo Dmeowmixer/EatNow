@@ -87,6 +87,7 @@ if (Meteor.isClient) {
     this.render('restaurant_view');
   });
 
+
 }
 
 if (Meteor.isServer) {
