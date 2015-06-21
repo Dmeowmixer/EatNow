@@ -1,7 +1,18 @@
 <template name="queueItem">
-  {{name}}
-  {{phone}}
-  {{time}}
-  <button id='delete'>Cancel Reservation</button>
+  <ul id="result_info">
+    <li>Name</li>
+    <li># of Party Members</li>
+    <li>Sign In Time</li>
+    <li>Estimate Wait Time</li>
+    <li>Cancel?</li>
+  </ul>
+  <ul id="db_results" style="padding-left:200px;padding-right:200px;border:1px solid black;">
+    <li>{{name}}</li>
+    <li>{{pNum}}</li>
+    <!-- <li>{{phone}}</li> -->
+    <li>{{time}}</li>
+    <li>0:20</li>
+    <button id='delete'>Cancel Reservation</button>
+  </ul>
   
 </template>

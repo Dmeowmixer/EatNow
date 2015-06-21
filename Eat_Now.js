@@ -39,7 +39,8 @@ if (Meteor.isClient) {
       var user_name = $('#name_input').val();
       var user_phone_num = $('#phone_num_input').val();
       var user_party_num = $('#party_num_input').val();
-      var user_selected_time = $('#res_time').val();
+      // var user_selected_time = $('#res_time').val();
+      var user_selected_time = moment().format("h:mm");
       
       Queues.insert({
         name: user_name,
@@ -128,7 +129,15 @@ if (Meteor.isClient) {
     //   console.log($(this).parent());
     // });
   );
+
+  // $('#db_results').css({
+  //   'text-align': 'justify',
+  //   'padding-left': '200px',
+  //   'padding-right': '200px',
+  //   'border': '1px solid black'
+  // });
 }
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
