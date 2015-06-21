@@ -65,9 +65,13 @@ Template.submit_button.events({
   // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
 });
 
+Router.route('/', function () {
+  this.render('home');
+});
 
-
-  
+Router.route('/rest', function (){
+  this.render('restaurant_view');
+});
 
 }
 if (Meteor.isServer) {
