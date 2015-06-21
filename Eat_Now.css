@@ -68,12 +68,12 @@ nav li {
 
 nav .right {
   float: right;
-  width: 10%;
+  width: 20%;
 }
 
 nav .name {
   float: left;
-  width: 80%;
+  width: 70%;
   padding-left: 40px;
 }
 

@@ -1,19 +1,46 @@
+Queues = new Mongo.Collection("queues");
+
 if (Meteor.isClient) {
-  // // counter starts at 0
-  // Session.setDefault('counter', 0);
 
-  // Template.hello.helpers({
-  //   counter: function () {
-  //     return Session.get('counter');
-  //   }
-  // });
+Template.body.helpers({
+  queues: function () {
+      return Queues.find({});
+    }
+});
 
-  // Template.hello.events({
-  //   'click button': function () {
-  //     // increment the counter when button is clicked
-  //     Session.set('counter', Session.get('counter') + 1);
-  //   }
-  // });
+// defines the submit button event 
+Template.body.events({
+  "submit .new-customer": function(event, template){
+    // console.log(event);
+    // var text = event.target.text.value;
+
+    Queues.insert({
+      name: template.find(".name").value,
+      phone: template.find(".phone").value
+      // createdAt: new Date() // current time
+    });
+
+    // Clear form
+    event.target.text.value = "";
+
+    // Prevent default form submit
+    return false;
+  },
+  "click .delete": function () {
+    Queues.remove(this._id);
+  }
+    // var user_name = $('#name_input').val();
+    // var user_phone_num = $('#phone_num_input').val();
+    // var user_party_num = $('#party_num_input').val();
+    // var user_selected_time = $('#res_time').(":selected");
+    // console.log(user_selected_time);
+
+    // user_list.insert({
+    //   name: user_name,
+    //   party: user_party_num
+    // });
+  // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
+});
 
 var addMinutes = function(date, minutes) {
   return new Date(date.getTime() + minutes*60000);
@@ -47,35 +74,17 @@ var addMinutes = function(date, minutes) {
 
 
 
-// Template.hello.events({
-//   'click button': function () {
-//     // increment the counter when button is clicked
-//     Session.set('counter', Session.get('counter') + 1);
+// Queue = new Mongo.Collection("queues");
+
+
+
+// Accounts.onCreateUser(function(options,user){
+//   user.permissions = user;
+//   if (options.profile) {
+//     user.profile = options.profile;
 //   }
+//   return user;
 // });
-
-
-
-// defines the submit button event 
-Template.submit_button.events({
-  "click #submit_button": function(){
-    var user_name = $('#name_input').val();
-    var user_phone_num = $('#phone_num_input').val();
-    var user_party_num = $('#party_num_input').val();
-    // var user_selected_time = $('#res_time').(":selected");
-    console.log(user_selected_time);
-  }
-  // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
-});
-
-
-Accounts.onCreateUser(function(options,user){
-  user.permissions = user;
-  if (options.profile) {
-    user.profile = options.profile;
-  }
-  return user;
-});
 
 
 }

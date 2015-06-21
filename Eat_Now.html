@@ -13,26 +13,30 @@
 
   <div class="food_image">
     <h1 class="restaurant_name">Restaurant Name</h1>
+    <form class="new-customer">
+      <input type="text" name="name" class="name"placeholder="Name" />
+      <input type="text" name="phone" class="phone"placeholder="Name" />
+    </form>
 <!--     <form id="user_input">
-      <input id="name_input" type="text" placeholder="Name">
-      <input id="phone_num_input" type="text" placeholder="Phone #">
+      <input id="name_input" type="text" placeholder="Name"> -->
+<!--       <input id="phone_num_input" type="text" placeholder="Phone #">
       <input id = "party_num_input" type="text" placeholder="# of Party Members">
       {{> time_dropdown}}
-      {{> submit_button}}
-    </form> -->
-    {{> add_reservation_form}}
+      {{> submit_button}} -->
+    <!-- </form> -->
+    <!-- {{> add_reservation_form}} -->
   </div>
 
   <ul id="result_list">
-    {{#each reservation}}
-      {{> res}} 
+    {{#each queues}}
+      {{> queue}}
     {{/each}}
   </ul>
 
 </body>
 
 <!-- Template for user input form -->
-<template name="add_reservation_form">
+<!-- <template name="add_reservation_form">
   {{#if currentUser}}
     <form id="user_input">
       <input id="name_input" type="text" placeholder="Name">
@@ -41,10 +45,10 @@
       {{> time_dropdown}}
       {{> submit_button}}
     </form>
-    {{else}}
-      <h1 class="login">Please Login to Make a Reservation!</h1>
+  {{else}}
+    <h1 class="login">Please Login to Make a Reservation!</h1>
   {{/if}}
-</template>
+</template> -->
 
 <!-- template for submite button -->
 <template name="submit_button">
@@ -58,4 +62,10 @@
       <option>{{this}}</option>
     {{/each}}
   </select>
+</template>
+
+<!-- template for queue list -->
+<template name="queue">
+  <li>{{text}}</li>
+  <button class="delete">&times;</button>
 </template>
