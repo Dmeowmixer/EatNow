@@ -15,14 +15,15 @@
     {{> submit_button}}
 
 </template>
-  <template name="submit_button">
-    <input id="submit_button" type="submit" value="Submit Reservation">
-  </template>
 
-  <template name="time_dropdown">
-    <select name="Requested Reservation Time" id="res_time">
-      {{#each populate}}
-        <option>{{this}}</option>
-      {{/each}}
-    </select>
-  </template>
+<template name="submit_button">
+  <input id="submit_button" type="submit" value="Submit Reservation">
+</template>
+
+<template name="time_dropdown">
+  <select name="Requested Reservation Time" id="res_time">
+    {{#each populate}}
+      <option>{{this}}</option>
+    {{/each}}
+  </select>
+</template>
