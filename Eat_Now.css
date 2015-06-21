@@ -118,10 +118,12 @@ form {
   min-width: 900px;
 }
 
-.customer_nav {
+.customer_nav{
   text-align: justify;
-  margin-left: 200px;
-  margin-right: 200px;
+  /*margin-left: 200px;*/
+  padding-left: 200px;
+  padding-right: 200px;
+  border: 1px solid black;
 }
 
 .customer_nav:after {
@@ -132,4 +134,23 @@ form {
 
 .customer_nav li{
   display: inline-block;
+  margin-top: 10px;
+}
+
+.customer {
+  text-align: justify;
+  padding-left: 200px;
+  padding-right: 200px;
+  border: 1px solid black;
+}
+
+.customer:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.customer li {
+  display: inline-block;
+  margin-top: 10px;
 }
