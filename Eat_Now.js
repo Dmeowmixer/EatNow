@@ -69,9 +69,10 @@ if (Meteor.isClient) {
       console.log("user_name works and saves");
       var user_phone_num = $('#phone_num_input').val();
       var user_party_num = $('#party_num_input').val();
-      var user_selected_time = $('#res_time').parent(":selected").val();
+      // var user_selected_time = $('#res_time').parent(":selected").val();
+      var user_selected_time = $('#res_time').val();
       console.log(user_selected_time);
-    $('#result_list').append("<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>");
+    $('#result_list').append("<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>" + "<li class='select_time'>"+user_selected_time+"</li>");
     }
   });
 
