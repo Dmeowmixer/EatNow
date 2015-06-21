@@ -1,9 +1,4 @@
-<template name="home">
-  
-  <!-- put in template -->
-  <!-- on home call this template -->
-  <!-- Router.go('routename', {id: sdf}) -->
-
+<template name="home">  
     <form id="user_input">
       <input id="name_input" type="text" value="Name">
       <input id="phone_num_input" type="text" value="Phone #">
@@ -16,12 +11,10 @@
         {{> res}}
       {{/each}}
     </ul>
-
+    
     {{> submit_button}}
 
 </template>
-
-
   <template name="submit_button">
     <input id="submit_button" type="submit" value="Submit Reservation">
   </template>
