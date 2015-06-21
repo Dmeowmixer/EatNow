@@ -77,6 +77,16 @@ if (Meteor.isClient) {
     $('#result_list').append("<ul>"+uName, uTime, uPtyNum+ "</ul>");
     window.location.replace("/list_view");
       console.log(user_info_obj);
+      var current_time = moment().format("hh:mm");
+
+      var start_time = current_time;
+      var end_time = user_selected_time;
+      var start = moment.duration(start_time, 'm');
+      var end = moment.duration(end_time, 'm');
+      var minutes_left = (end.subtract(start).minutes());
+
+
+    $('.food_image').append("<ul id='result_list'>" + "<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>" + "<li class='select_time'>"+user_selected_time+"</li>" + "<li class='time_left'>"+minutes_left+ " minutes" + "</li>" + "</ul>");
     }
   });
 
