@@ -45,14 +45,46 @@ table {
 }
 
 body {
-  text-align: center;
+  /*text-align: center;*/
   margin: 0;
   padding: 0;
 } 
 
+nav {
+  height: 50px;
+  /*background-color: red;*/
+}
+
+nav h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 150%;
+  line-height: 50px;
+}
+
+nav li {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+}
+
+nav .right {
+  float: right;
+  width: 10%;
+}
+
+nav .name {
+  float: left;
+  width: 80%;
+  padding-left: 40px;
+}
+
+#login-buttons {
+  line-height: 50px;
+}
+
 input, #res_time {
   font-family: 'Oswald', sans-serif;
   width: 150px;
+  text-align: center;
 }
 
 h1.restaurant_name {
@@ -75,8 +107,9 @@ h1.login {
   background-size: 100% auto;
   width: 100%;
   height: 300px;
+  text-align: center;
 }
 
 form {
-  /*padding-top: 20px;*/
+  text-align: center;
 }

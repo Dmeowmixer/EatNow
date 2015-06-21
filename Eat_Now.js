@@ -24,13 +24,13 @@ var addMinutes = function(date, minutes) {
       var d = new Date();
       var result = "";
       var arr = [];
-      for (var idx = 0; idx < 8; idx++)
+      for (var i = 0; i < 8; i++)
       {
           var m = (((d.getMinutes() + 7.5)/15 | 0) * 15) % 60;
           var h = ((((d.getMinutes()/105) + .5) | 0) + d.getHours()) % 12;
           d = new Date(d.getYear(), d.getMonth(), d.getDay(), h, m, 0, 0);
 
-          if (idx > 0) result += ", ";
+          if (i > 0) result += ", ";
           result += ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2);
           
           d = addMinutes(d, 15);
