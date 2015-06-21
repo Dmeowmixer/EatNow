@@ -1,60 +1,79 @@
+Queues = new Mongo.Collection("queues");
+
 if (Meteor.isClient) {
-  // // counter starts at 0
-  // Session.setDefault('counter', 0);
 
-  // Template.hello.helpers({
-  //   counter: function () {
-  //     return Session.get('counter');
-  //   }
-  // });
+  Template.body.helpers({
+    queues: function () {
+        return Queues.find({});
+      }
+  });
 
-  // Template.hello.events({
-  //   'click button': function () {
-  //     // increment the counter when button is clicked
-  //     Session.set('counter', Session.get('counter') + 1);
-  //   }
-  // });
+  // defines the submit button event 
+  Template.body.events({
+    "submit .new-customer": function(event, template){
+      // console.log(event);
+      // var text = event.target.text.value;
+
+      Queues.insert({
+        name: template.find(".name").value,
+        phone: template.find(".phone").value
+        // createdAt: new Date() // current time
+      });
+
+      // Clear form
+      event.target.text.value = "";
+
+      // Prevent default form submit
+      return false;
+    },
+    "click .delete": function () {
+      Queues.remove(this._id);
+    }
+      // var user_name = $('#name_input').val();
+      // var user_phone_num = $('#phone_num_input').val();
+      // var user_party_num = $('#party_num_input').val();
+      // var user_selected_time = $('#res_time').(":selected");
+      // console.log(user_selected_time);
+
+      // user_list.insert({
+      //   name: user_name,
+      //   party: user_party_num
+      // });
+    // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
+  });
+
+  var addMinutes = function(date, minutes) {
+    return new Date(date.getTime() + minutes*60000);
+  };
 
   Template.time_dropdown.helpers({
     populate: function() {
-      var hours, minutes, ampm, time;
+      var d = new Date();
+      var result = "";
       var arr = [];
-      for(var i = 420; i <= 1440; i += 15){
-        hours = Math.floor(i / 60);
-        minutes = i % 60;
-        if (minutes < 10){
-            minutes = '0' + minutes; // adding leading zero
-        }
-        ampm = hours % 24 < 12 ? 'AM' : 'PM';
-        hours = hours % 12;
-        if (hours === 0){
-            hours = 12;
-        }
-        time = hours + ':' + minutes + ' ' + ampm;
-        arr.push(time);
+      for (var i = 0; i < 8; i++)
+      {
+          var m = (((d.getMinutes() + 7.5)/15 | 0) * 15) % 60;
+          var h = ((((d.getMinutes()/105) + .5) | 0) + d.getHours()) % 12;
+          d = new Date(d.getYear(), d.getMonth(), d.getDay(), h, m, 0, 0);
+
+          if (i > 0) result += ", ";
+          result += ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2);
+          
+          d = addMinutes(d, 15);
       }
-      console.log(arr);
+      // console.log(result);
+      arr = result.split(',');
+      // console.log(arr);
       return arr;
     }
   });
 
-  var time =  moment().add(2, 'h').format("H mm");
-
-  console.log(time);
-
-// Ransons Code
-// Appending user input to the ul list.
+  // Ransons Code
+  // Appending user input to the ul list.
 
 
-
-// Template.hello.events({
-//   'click button': function () {
-//     // increment the counter when button is clicked
-//     Session.set('counter', Session.get('counter') + 1);
-//   }
-// });
-
-
+  // defines the submit button event 
   Template.submit_button.events({
     "click #submit_button": function(){
       var user_name = $('#name_input').val();
@@ -66,17 +85,24 @@ if (Meteor.isClient) {
     // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
   });
 
+// Template.hello.events({
+//   'click button': function () {
+//     // increment the counter when button is clicked
+//     Session.set('counter', Session.get('counter') + 1);
+//   }
+// });
+
   Router.configure({
     layoutTemplate: 'layout'
   });
 
-Router.route('/rest', function (){
-  this.render('restaurant_view');
-});
+  Router.route('/', function () {
+    this.render('home');
+  });
 
-Router.route('/', function () {
-  this.render('home');
-});
+  Router.route('/rest', function (){
+    this.render('restaurant_view');
+  });
 
 }
 

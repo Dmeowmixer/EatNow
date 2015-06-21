@@ -1,11 +1,20 @@
 <head>
   <title>Table Ready</title>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 </body> 
 
+<template name="layout">
+  <nav>
+    <ul>
+      <li class="name"><h1>Table Ready</h1></li>
+      <li class="right">{{> loginButtons}}</li>
+    </ul>
+  </nav>
 
-  <template name="layout">
-    <h1>Table Ready</h1>
+  <div class="food_image">
+    <h1 class="restaurant_name">Restaurant Name</h1>
     {{> yield}}
-  </template>
+  </div>
+</template> 
