@@ -9,27 +9,27 @@ if (Meteor.isClient) {
   });
 
   // defines the submit button event 
-  Template.body.events({
-    "submit .new-customer": function(event, template){
-      // console.log(event);
-      // var text = event.target.text.value;
+  // Template.body.events({
+  //   "submit .new-customer": function(event, template){
+  //     // console.log(event);
+  //     // var text = event.target.text.value;
 
-      Queues.insert({
-        name: template.find(".name").value,
-        phone: template.find(".phone").value
-        // createdAt: new Date() // current time
-      });
+  //     Queues.insert({
+  //       name: template.find(".name").value,
+  //       phone: template.find(".phone").value
+  //       // createdAt: new Date() // current time
+  //     });
 
-      // Clear form
-      event.target.text.value = "";
+  //     // Clear form
+  //     event.target.text.value = "";
 
-      // Prevent default form submit
-      return false;
-    },
-    "click .delete": function () {
-      Queues.remove(this._id);
-    }
-  });
+  //     // Prevent default form submit
+  //     return false;
+  //   },
+  //   "click .delete": function () {
+  //     Queues.remove(this._id);
+  //   }
+  // });
 
   var addMinutes = function(date, minutes) {
     return new Date(date.getTime() + minutes*60000);
@@ -84,7 +84,6 @@ if (Meteor.isClient) {
       var start = moment.duration(start_time, 'm');
       var end = moment.duration(end_time, 'm');
       var minutes_left = (end.subtract(start).minutes());
-
 
     $('.food_image').append("<ul id='result_list'>" + "<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>" + "<li class='select_time'>"+user_selected_time+"</li>" + "<li class='time_left'>"+minutes_left+ " minutes" + "</li>" + "</ul>");
     }
