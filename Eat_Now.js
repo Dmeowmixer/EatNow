@@ -72,20 +72,10 @@ Router.route('/', function () {
   this.render('home');
 });
 
-<<<<<<< HEAD
-Accounts.onCreateUser(function(options,user){
-  user.permissions = user;
-  if (options.profile) {
-    user.profile = options.profile;
-  }
-  return user;
-});
 
-=======
 Router.route('/rest', function (){
   this.render('restaurant_view');
 });
->>>>>>> ransonbranchdev
 
 }
 if (Meteor.isServer) {
