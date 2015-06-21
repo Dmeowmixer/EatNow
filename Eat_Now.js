@@ -85,6 +85,13 @@ if (Meteor.isClient) {
     // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
   });
 
+// Template.hello.events({
+//   'click button': function () {
+//     // increment the counter when button is clicked
+//     Session.set('counter', Session.get('counter') + 1);
+//   }
+// });
+
   Router.configure({
     layoutTemplate: 'layout'
   });
@@ -98,6 +105,7 @@ if (Meteor.isClient) {
   });
 
 }
+
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
