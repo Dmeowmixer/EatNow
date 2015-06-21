@@ -1,8 +1,8 @@
 <template name="home">  
     <form id="user_input">
-      <input id="name_input" type="text" value="Name">
-      <input id="phone_num_input" type="text" value="Phone #">
-      <input id = "party_num_input" type="text" value="# of Party Members">
+      <input id="name_input" type="text" placeholder="Name">
+      <input id="phone_num_input" type="text" placeholder="Phone #">
+      <input id = "party_num_input" type="text" placeholder="# of Party Members">
       {{> time_dropdown}}
       {{> submit_button}}
     </form>
@@ -13,12 +13,6 @@
       <li>Reservation Time</li>
       <li>Estimate Wait Time</li>
     </ul>
-
-    <div id="result_list">
-      {{#each reservation}}
-        {{> res}}
-      {{/each}}
-    </div>
 
 </template>
   <template name="submit_button">
