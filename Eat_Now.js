@@ -68,7 +68,11 @@ Template.submit_button.events({
   // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
 });
 
+Router.route('/', function () {
+  this.render('home');
+});
 
+<<<<<<< HEAD
 Accounts.onCreateUser(function(options,user){
   user.permissions = user;
   if (options.profile) {
@@ -77,6 +81,11 @@ Accounts.onCreateUser(function(options,user){
   return user;
 });
 
+=======
+Router.route('/rest', function (){
+  this.render('restaurant_view');
+});
+>>>>>>> ransonbranchdev
 
 }
 if (Meteor.isServer) {

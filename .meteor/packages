@@ -8,5 +8,9 @@ meteor-platform
 autopublish
 insecure
 momentjs:moment
+<<<<<<< HEAD
 accounts-password
 accounts-ui
+=======
+iron:router
+>>>>>>> ransonbranchdev
