@@ -92,12 +92,22 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.restaurant_view.helpers({
+    queues_items: function () {
+      return Queues.find();
+    }    
+  });
+
+  Template.list_view.events({
+    'click #delete': function () {
+    Queues.remove(this._id);
+    }
+  });
 
   Template.list_view.helpers({
     queues_items: function () {
       return Queues.find();
-    }
-      
+    }    
   });
   Router.configure({
     layoutTemplate: 'layout'
