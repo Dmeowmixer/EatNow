@@ -1,7 +1,7 @@
 <template name="restaurant_view">
-  <ul id="result_list">
-    {{#each reservation}}
-      {{> rest}}
+  <ul id="db_results_rest">
+    {{#each queues_items}}
+      {{> queueItem}}
     {{/each}}
   </ul>
 </template>
