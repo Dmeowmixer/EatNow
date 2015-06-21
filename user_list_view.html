@@ -1,9 +1,9 @@
 <template name="list_view">
+  <ul id="db_results">
   
-  <div id="result_list">
-    {{#each reservation}}
-      {{> res}}
+    {{#each queues_items}}
+      {{> queueItem}}
     {{/each}}
-  </div>
 
+  </ul>
 </template>
