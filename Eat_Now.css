@@ -113,3 +113,23 @@ h1.login {
 form {
   text-align: center;
 }
+
+.customer_list {
+  min-width: 900px;
+}
+
+.customer_nav {
+  text-align: justify;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.customer_nav:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.customer_nav li{
+  display: inline-block;
+}

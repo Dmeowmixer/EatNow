@@ -6,10 +6,7 @@
 </body>
 
 <template name="layout">
-  <h1>Table Ready</h1>
-  {{> yield}}
-</template> 
-<!--   <nav>
+  <nav>
     <ul>
       <li class="name"><h1>Table Ready</h1></li>
       <li class="right">{{> loginButtons}}</li>
@@ -18,7 +15,23 @@
 
   <div class="food_image">
     <h1 class="restaurant_name">Restaurant Name</h1>
-  </div> -->
+    {{> yield}}
+  </div>
+  <div class="customer_list">
+    <ul class="customer_nav">
+      <li>Name</li>
+      <li># of Party</li>
+      <li>Reservation Time</li>
+      <li>Estimate Wait Time</li>
+    </ul>  
+  </div>
+</template> 
+<!--       <div class="customer">
+        <p>Name</p>
+        <p># of party</p>
+        <p>Reservation Time</p>
+        <p>Wait Time</p>
+      </div> -->
 
 <!--     <form class="new-customer">
       <input type="text" name="name" class="name"placeholder="Name" />
