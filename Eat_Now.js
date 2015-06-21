@@ -66,10 +66,10 @@ if (Meteor.isClient) {
       var user_name = $('#name_input').val();
       var user_phone_num = $('#phone_num_input').val();
       var user_party_num = $('#party_num_input').val();
-      // var user_selected_time = $('#res_time').(":selected");
+      var user_selected_time = $('#res_time').parent(":selected");
       console.log(user_selected_time);
+    $('#result_list').append("</li>"+user_name+ "</li>");
     }
-    // $('#result_list').append("</li>" + user_name, user_phone_num, user_party_num, user_selected_time + "</li>");
   });
 
   Router.configure({
