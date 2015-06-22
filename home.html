@@ -1,22 +1,16 @@
-<template name="home">  
+<template name="home">
+    <h1 class="rest_chosen">The Old Spaghetti Factory</h1>
     <form id="user_input">
       <input id="name_input" type="text" placeholder="Name">
       <input id="phone_num_input" type="text" placeholder="Phone #">
       <input id = "party_num_input" type="text" placeholder="# of Party Members">
-      {{> time_dropdown}}
       {{> submit_button}}
     </form>
-    
-    <ul id="result_info">
-      <li>Name</li>
-      <li># of Party Members</li>
-      <li>Reservation Time</li>
-      <li>Estimate Wait Time</li>
-    </ul>
+
 
 </template>
   <template name="submit_button">
-    <input id="submit_button" type="submit" value="Submit Reservation">
+    <input id="submit_button" type="submit" value="Save My Spot">
   </template>
 
 <template name="time_dropdown">

@@ -48,18 +48,19 @@ body {
   /*text-align: center;*/
   margin: 0;
   padding: 0;
+  background: url('/roughcloth.png');
 } 
 
 nav {
   height: 50px;
-  /*background-color: red;*/
+  background-color: #FFF;
 }
 
-nav h1 {
+/*nav h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 150%;
   line-height: 50px;
-}
+}*/
 
 nav li {
   display: inline-block;
@@ -73,8 +74,21 @@ nav .right {
 
 nav .name {
   float: left;
-  width: 70%;
-  padding-left: 40px;
+  width: 60%;
+  padding-left: 170px;
+}
+
+nav .name a {
+  font-size: 150%;
+  line-height: 50px;
+  text-decoration: none;
+  color: #64A2A3;
+  padding-left: 10px;
+}
+
+nav .name img {
+  height: 25px;
+  width: 25px;
 }
 
 #login-buttons {
@@ -113,6 +127,7 @@ h1.login {
 
 form {
   text-align: center;
+  line-height: 60px;
 }
 
 #result_info, #result_list{
@@ -135,6 +150,45 @@ form {
   text-align: center;
 }
 
+.restaurant {
+  margin-top: 30px;
+}
 
+.restaurant_list {
+  text-align: center;
+}
 
-/*text-align:justify;padding-left:200px;padding-right:200px;border:1px solid black;*/
+.restaurant_list li {
+  margin-bottom: 10px;
+}
+
+.restaurant_list a {
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  color: #000;
+}
+
+.restaurant_list a:hover {
+  color: #64A2A3;
+}
+
+.restaurant h1 {
+  font-size: 200%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: #64A2A3;
+}
+
+#login-buttons a {
+  text-decoration: none;
+}
+
+.rest_chosen {
+  font-size: 200%;
+  color: #64A2A3;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

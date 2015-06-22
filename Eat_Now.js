@@ -2,32 +2,33 @@ Queues = new Mongo.Collection("queues");
 
 if (Meteor.isClient) {
 
-  var addMinutes = function(date, minutes) {
-    return new Date(date.getTime() + minutes*60000);
-  };
+  // var addMinutes = function(date, minutes) {
+  //   return new Date(date.getTime() + minutes*60000);
+  // };
 
-  Template.time_dropdown.helpers({
-    populate: function() {
-      var d = new Date();
-      var result = "";
-      var arr = [];
-      for (var i = 0; i < 8; i++)
-      {
-          var m = (((d.getMinutes() + 7.5)/15 | 0) * 15) % 60;
-          var h = ((((d.getMinutes()/105) + .5) | 0) + d.getHours()) % 12;
-          d = new Date(d.getYear(), d.getMonth(), d.getDay(), h, m, 0, 0);
+  // Template.time_dropdown.helpers({
+  //   populate: function() {
+  //     var d = new Date();
+  //     var result = "";
+  //     var arr = [];
+  //     for (var i = 0; i < 8; i++)
+  //     {
+  //         var m = (((d.getMinutes() + 7.5)/15 | 0) * 15) % 60;
+  //         var h = ((((d.getMinutes()/105) + .5) | 0) + d.getHours()) % 12;
+  //         d = new Date(d.getYear(), d.getMonth(), d.getDay(), h, m, 0, 0);
 
-          if (i > 0) result += ", ";
-          result += ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2);
+  //         if (i > 0) result += ", ";
+  //         result += ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2);
           
-          d = addMinutes(d, 15);
-      }
-      // console.log(result);
-      arr = result.split(',');
-      // console.log(arr);
-      return arr;
-    }
-  });
+  //         d = addMinutes(d, 15);
+  //     }
+  //     // console.log(result);
+  //     arr = result.split(',');
+  //     // console.log(arr);
+  //     return arr;
+  //   }
+  // });
+
   var user_info_obj = {};
 
   // Ransons Code
@@ -42,11 +43,22 @@ if (Meteor.isClient) {
       // var user_selected_time = $('#res_time').val();
       var user_selected_time = moment().format("h:mm");
       
+      var start_time = user_selected_time;
+      var end_time = moment().add(Math.floor((Math.random() * 10) + 12), 'minutes');
+      var start = moment.duration(start_time, 'm');
+      var end = moment.duration(end_time, 'm');
+      var minutes_left = (end.subtract(start).minutes());
+      var user_min_left = minutes_left + " minutes"
+      // console.log(user_min_left);
+
+      // Math.floor(Math.random()*10) +20)
+
       Queues.insert({
         name: user_name,
         phone: user_phone_num,
         time: user_selected_time,
-        pNum: user_party_num
+        pNum: user_party_num,
+        min_left: user_min_left
       });
 
 
@@ -60,15 +72,10 @@ if (Meteor.isClient) {
  
     window.location.replace("/list_view");
     console.log(user_info_obj);
-    var current_time = moment().format("hh:mm");
+    // var current_time = moment().format("hh:mm");
 
-    var start_time = current_time;
-    var end_time = user_selected_time;
-    var start = moment.duration(start_time, 'm');
-    var end = moment.duration(end_time, 'm');
-    var minutes_left = (end.subtract(start).minutes());
 
-    $('.food_image').append("<ul id='result_list'>" + "<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>" + "<li class='select_time'>"+user_selected_time+"</li>" + "<li class='time_left'>"+minutes_left+ " minutes" + "</li>" + "</ul>");
+    // $('.food_image').append("<ul id='result_list'>" + "<li class='name'>"+user_name+"</li>" + "<li class='party_num'>"+user_party_num+"</li>" + "<li class='select_time'>"+user_selected_time+"</li>" + "<li class='time_left'>"+minutes_left+ " minutes" + "</li>" + "</ul>");
     }
   });
 

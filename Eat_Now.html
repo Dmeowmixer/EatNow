@@ -8,13 +8,16 @@
 <template name="layout">
   <nav>
     <ul>
-      <li class="name"><h1>Table Ready</h1></li>
+      <li class="name">
+        <img src="/tableready_logo_copy.png">
+        <a href="/">Table Ready</a>
+      </li>
       <li class="right">{{> loginButtons}}</li>
     </ul>
   </nav>
 
   <div class="food_image">
-    <h1 class="restaurant_name">Restaurant Name</h1>
+    <!-- <h1 class="restaurant_name">Restaurant Name</h1> -->
   </div>
   {{> yield}}
 </template> 

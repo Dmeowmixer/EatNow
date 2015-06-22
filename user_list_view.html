@@ -1,6 +1,14 @@
 <template name="list_view">
   <!-- <ul id="db_results"> -->
   <div>
+    <ul id="result_info">
+      <li>Name</li>
+      <li># of Party Members</li>
+      <li>Sign In Time</li>
+      <li>Estimate Wait Time</li>
+      <li>Cancel?</li>
+    </ul>
+    
     {{#each queues_items}}
       {{> queueItem}}
     {{/each}}
